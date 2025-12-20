@@ -3,51 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperHui - C/C++嵌入式工程师</title>
+    <title>C/C++嵌入式工程师 - 个人介绍</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 浅色主题变量定义 */
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --background-color: #f8f9fa;
-            --card-background: #ffffff;
-            --text-color: #2c3e50;
-            --text-secondary: #7f8c8d;
-            --border-color: #e0e0e0;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        /* 全局样式重置 */
+        /* 基础样式重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
-            background-color: var(--background-color);
-            color: var(--text-color);
+            background-color: #0a192f;
+            color: #ccd6f6;
             line-height: 1.6;
-            transition: var(--transition);
         }
-
+        
         /* 导航栏样式 */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: rgba(10, 25, 47, 0.9);
             padding: 1.2rem 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
-
+        
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -55,51 +38,35 @@
             justify-content: flex-end;
             padding: 0 2rem;
         }
-
+        
         nav a {
-            color: var(--text-color);
+            color: #ccd6f6;
             text-decoration: none;
             margin-left: 2.5rem;
             font-weight: 500;
-            transition: var(--transition);
+            transition: color 0.3s;
             font-size: 1.1rem;
-            position: relative;
         }
-
+        
         nav a:hover {
-            color: var(--secondary-color);
+            color: #64ffda;
         }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
+        
         /* 主内容区域 */
         section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 8rem 2rem 4rem;
+            padding: 6rem 2rem;
         }
-
+        
         h2 {
             font-size: 2.5rem;
             margin-bottom: 2.5rem;
-            color: var(--primary-color);
+            color: #64ffda;
             position: relative;
             display: inline-block;
         }
-
+        
         h2::after {
             content: '';
             position: absolute;
@@ -107,10 +74,9 @@
             left: 0;
             width: 60%;
             height: 3px;
-            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-            border-radius: 2px;
+            background-color: #64ffda;
         }
-
+        
         /* 首页大图样式 */
         .hero {
             height: 100vh;
@@ -118,70 +84,49 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.9));
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="%233498db" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>');
-            opacity: 0.3;
-        }
-
+        
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
-
+        
         .highlight {
-            color: var(--secondary-color);
-            font-weight: 600;
+            color: #64ffda;
         }
-
+        
         .avatar {
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 4px solid var(--secondary-color);
+            border: 3px solid #64ffda;
             margin-bottom: 2rem;
             object-fit: cover;
-            box-shadow: var(--shadow);
         }
-
+        
         .hero-content p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
-            color: var(--text-secondary);
+            color: #8892b0;
         }
-
+        
         .btn {
             display: inline-block;
             padding: 0.8rem 2rem;
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
+            background-color: transparent;
+            color: #64ffda;
+            border: 1px solid #64ffda;
             text-decoration: none;
             border-radius: 4px;
-            transition: var(--transition);
+            transition: all 0.3s;
             font-weight: 500;
-            box-shadow: var(--shadow);
         }
-
+        
         .btn:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
+            background-color: rgba(100, 255, 218, 0.1);
         }
-
+        
         /* 关于我部分 */
         .about-content p {
             font-size: 1.2rem;
@@ -189,45 +134,37 @@
             max-width: 800px;
             line-height: 1.8;
         }
-
+        
         /* 技能网格 */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-
+        
         .skill-item {
-            background-color: var(--card-background);
+            background-color: #112240;
             padding: 2rem;
-            border-radius: 8px;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            border-left: 4px solid var(--secondary-color);
-            text-align: center;
+            border-radius: 5px;
+            transition: transform 0.3s;
+            border-left: 3px solid #64ffda;
         }
-
+        
         .skill-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-
+        
         .skill-item i {
             font-size: 2.5rem;
-            color: var(--secondary-color);
+            color: #64ffda;
             margin-bottom: 1rem;
         }
-
+        
         .skill-item h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: var(--primary-color);
         }
-
-        .skill-item p {
-            color: var(--text-secondary);
-        }
-
+        
         /* 联系信息 */
         .contact-info p {
             font-size: 1.2rem;
@@ -235,35 +172,32 @@
             display: flex;
             align-items: center;
         }
-
+        
         .contact-info i {
             margin-right: 1rem;
-            color: var(--secondary-color);
+            color: #64ffda;
             width: 25px;
-            text-align: center;
         }
-
+        
         .contact-info a {
-            color: var(--secondary-color);
+            color: #64ffda;
             text-decoration: none;
             margin: 0 0.5rem;
-            transition: var(--transition);
+            transition: color 0.3s;
         }
-
+        
         .contact-info a:hover {
-            color: var(--accent-color);
-            text-decoration: underline;
+            color: #ccd6f6;
         }
-
+        
         /* 页脚 */
         footer {
             text-align: center;
             padding: 2rem;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            margin-top: 2rem;
+            border-top: 1px solid #233554;
+            color: #8892b0;
         }
-
+        
         /* 响应式设计 */
         @media (max-width: 768px) {
             nav {
@@ -285,10 +219,6 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
-            
-            h2 {
-                font-size: 2rem;
-            }
         }
     </style>
 </head>
@@ -306,8 +236,8 @@
     <!-- 首页大图 -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <img src="https://via.placeholder.com/180" alt="SuperHui的头像" class="avatar">
-            <h1>你好，我是<span class="highlight">SuperHui</span></h1>
+            <img src="avatar.jpg" alt="嵌入式工程师头像" class="avatar">
+            <h1>你好，我是<span class="highlight">[SuperHui]</span></h1>
             <p>C/C++嵌入式软件工程师 | 物联网开发专家 | 系统架构师</p>
             <a href="#contact" class="btn">联系我</a>
         </div>
@@ -317,9 +247,9 @@
     <section id="about" class="section">
         <h2>关于我</h2>
         <div class="about-content">
-            <p>我是一名专注于嵌入式系统开发的软件工程师，拥有多年C/C++语言编程经验，注重代码框架设计及规范，可读性高。</p>
-            <p>熟悉嵌入式系统开发流程，具备扎实的模数电基本知识，能够在系统出现问题时进行软硬件联合调试。</p>
-            <p>热爱底层编程，喜欢算法的艺术，对技术有持续的热情，享受创造有价值产品带来的成就感。</p>
+            <p>我是一名专注于嵌入式系统开发的软件工程师，拥有多年C/C++语言编程经验，注重代码框架设计及规范，可读性高[1](@ref)。</p>
+            <p>熟悉嵌入式系统开发流程，具备扎实的模数电基本知识，能够在系统出现问题时进行软硬件联合调试[2](@ref)。</p>
+            <p>热爱底层编程，喜欢算法的艺术，对技术有持续的热情，享受创造有价值产品带来的成就感[2](@ref)。</p>
         </div>
     </section>
 
@@ -330,32 +260,32 @@
             <div class="skill-item">
                 <i class="fas fa-microchip"></i>
                 <h3>嵌入式开发</h3>
-                <p>熟练掌握C/C++语言，有5万行以上编程经验。熟悉ARM、STM32、FreeRTOS等嵌入式平台与操作系统。</p>
+                <p>熟练掌握C/C++语言，有5万行以上编程经验。熟悉ARM、STM32、FreeRTOS等嵌入式平台与操作系统[1,2](@ref)。</p>
             </div>
             <div class="skill-item">
                 <i class="fas fa-code"></i>
                 <h3>系统编程</h3>
-                <p>精通Linux系统编程、网络编程、多线程、多进程开发。熟悉Linux内核移植、uboot移植、驱动开发。</p>
+                <p>精通Linux系统编程、网络编程、多线程、多进程开发。熟悉Linux内核移植、uboot移植、驱动开发[2](@ref)。</p>
             </div>
             <div class="skill-item">
                 <i class="fas fa-tools"></i>
                 <h3>开发工具</h3>
-                <p>熟练使用Keil、IAR、GCC、Git等开发工具，掌握Altium Designer进行电路设计，熟练使用示波器、信号发生器等调试工具。</p>
+                <p>熟练使用Keil、IAR、GCC、Git等开发工具，掌握Altium Designer进行电路设计，熟练使用示波器、信号发生器等调试工具[1,2](@ref)。</p>
             </div>
             <div class="skill-item">
                 <i class="fas fa-project-diagram"></i>
                 <h3>项目经验</h3>
-                <p>拥有智能家居系统、物联网设备、工业控制等多个完整项目经验，从需求分析到产品落地的全流程参与。</p>
+                <p>拥有智能家居系统、物联网设备、工业控制等多个完整项目经验，从需求分析到产品落地的全流程参与[3,5](@ref)。</p>
             </div>
             <div class="skill-item">
                 <i class="fas fa-bluetooth-b"></i>
                 <h3>通信协议</h3>
-                <p>精通TCP/IP、UDP、Socket网络编程，熟悉UART、I2C、SPI等常用通信接口，有丰富的物联网通信开发经验。</p>
+                <p>精通TCP/IP、UDP、Socket网络编程，熟悉UART、I2C、SPI等常用通信接口，有丰富的物联网通信开发经验[1,3](@ref)。</p>
             </div>
             <div class="skill-item">
                 <i class="fas fa-cog"></i>
                 <h3>算法与控制</h3>
-                <p>熟悉PID控制算法、各种滤波算法，有陀螺仪、加速度计等传感器开发经验，能够实现复杂的控制逻辑。</p>
+                <p>熟悉PID控制算法、各种滤波算法，有陀螺仪、加速度计等传感器开发经验，能够实现复杂的控制逻辑[2](@ref)。</p>
             </div>
         </div>
     </section>
@@ -364,12 +294,12 @@
     <section id="contact" class="section">
         <h2>联系我</h2>
         <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> 邮箱：superhui@example.com</p>
+            <p><i class="fas fa-envelope"></i> 邮箱：your-email@example.com</p>
             <p><i class="fas fa-phone"></i> 电话：138-xxxx-xxxx</p>
-            <p><i class="fas fa-map-marker-alt"></i> 地点：北京/上海/深圳</p>
+            <p><i class="fas fa-map-marker-alt"></i> 地点：北京/上海/深圳（可根据实际情况修改）</p>
             <p>
-                <a href="https://gitee.com/SuperHui"><i class="fab fa-git"></i> Gitee</a> |
-                <a href="https://github.com/SuperHui"><i class="fab fa-github"></i> GitHub</a> |
+                <a href="https://gitee.com/你的用户名"><i class="fab fa-git"></i> Gitee</a> |
+                <a href="https://github.com/你的用户名"><i class="fab fa-github"></i> GitHub</a> |
                 <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </p>
         </div>
@@ -377,7 +307,7 @@
 
     <!-- 页脚 -->
     <footer>
-        <p>© 2025 SuperHui - 嵌入式开发工程师个人主页. 托管于 Gitee Pages</p>
+        <p>© 2025 嵌入式开发工程师个人主页. 托管于 Gitee Pages</p>
     </footer>
 
     <script>
@@ -397,9 +327,9 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.backgroundColor = 'rgba(10, 25, 47, 0.95)';
             } else {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.backgroundColor = 'rgba(10, 25, 47, 0.9)';
             }
         });
         
